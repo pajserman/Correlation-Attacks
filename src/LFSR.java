@@ -3,8 +3,6 @@ public class LFSR {
     private int[] CD;
     private int modulus;
     private int[] buffer;
-    private int[] case1;
-    private int[] ZERO = { 0, 0, 0, 0 };
 
     public LFSR(int[] CD, int modulus, int[] key) {
         this.CD = CD;
@@ -42,19 +40,16 @@ public class LFSR {
     }
 
     public static boolean areArraysEqual(int[] array1, int[] array2) {
-        // Check if the lengths are different
         if (array1.length != array2.length) {
             return false;
         }
 
-        // Check if each element is the same
         for (int i = 0; i < array1.length; i++) {
             if (array1[i] != array2[i]) {
                 return false;
             }
         }
 
-        // If no differences were found, the arrays are equal
         return true;
     }
 

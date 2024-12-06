@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class App {
     public static void main(String[] args) throws Exception {
         
@@ -20,7 +18,16 @@ public class App {
             System.out.println("Key: " + key[0] + " with prob: " + key[1] + "%");
         }
 
-        System.out.println("Now testing if the give the same stream as Z...");
+        System.out.println("Same keys but in binary:");
+        for (int i = 0; i < keys.length; i++) {
+            int[] binary = SingleAttack.toBinaryArray(keys[i][0]);
+            for (int j : binary) {
+                System.out.print(j);
+            }
+            System.out.println();
+        }
+
+        System.out.println("Now testing if they give the same stream as Z...");
 
         // keys[0][0] = 1;
         
@@ -37,7 +44,7 @@ public class App {
         }
 
         if(check) {
-            System.out.println("The streams match up! The keys are correct!");
+            System.out.println("OK! The streams match up! The keys are correct!");
         }
 
     }

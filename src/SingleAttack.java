@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class SingleAttack {
 
-    private double prob = 0.75;
     private int[] z;
     private int[] cd;
 
